@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qima.interview.dao.GeneralFeatureDao">
+    <resultMap id="generalFeatureMap" type="com.qima.interview.entity.GeneralFeature">
+        <id property="id" column="FEATURE_ID" jdbcType="VARCHAR" />
+        <result property="name" column="FEATURE_NAME" jdbcType="VARCHAR" />
+        <result property="code" column="FEATURE_CODE" jdbcType="VARCHAR" />
+        <result property="type" column="VALUE_TYPE" jdbcType="VARCHAR" />
+        <result property="comments" column="COMMENTS" jdbcType="VARCHAR" />
+        <result property="createTime" column="CREATE_TIME" jdbcType="DATE" />
+        <result property="updateTime" column="UPDATE_TIME" jdbcType="DATE" />
+        <result property="synchronizable" column="SYNC_ABLE" jdbcType="INTEGER" />
+        <result property="defaultValue" column="DEFAULT_VALUE" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="getByCode" resultMap="generalFeatureMap">
+        SELECT
+            FEATURE_ID,
+            FEATURE_NAME,
+            FEATURE_CODE,
+            VALUE_TYPE,
+            COMMENTS,
+            CREATE_TIME,
+            UPDATE_TIME,
+            SYNC_ABLE,
+            DEFAULT_VALUE
+        FROM
+            GENERAL_FEATURE
+        WHERE
+            FEATURE_CODE = #{code, jdbcType=VARCHAR}
+    </select>
+</mapper>
