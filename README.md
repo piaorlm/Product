@@ -202,10 +202,10 @@ To sort the products, toplisted products and general priorities are provide:
 
 Here are the tasks to acheive these two requirements.
 
-##### 1. CompanyService#getCompanies - call ```/companies?ids=c1,c2``` to varify
+##### 1. [CompanyService#getCompanies](src/main/java/com/qima/product/service/CompanyService.java) - call ```/companies?ids=c1,c2``` to varify
 Implement function to search companies by a set of Ids passed in
 
-##### 2. CompanyDao#initCompanies - call ```/companies``` to varify
+##### 2. [CompanyDao#initCompanies](src/main/java/com/qima/product/dao/CompanyDao.java) - call ```/companies``` to varify
 Fill parent field in all company entity with the relation data. Result of the company list should be in format as below:
 ```json
 [
@@ -226,8 +226,8 @@ Fill parent field in all company entity with the relation data. Result of the co
 ]
 ```
 
-##### 3. ProductService#getAllPrioritized - call ```/products/prioritization``` to verify
+##### 3. [ProductService#getAllPrioritized](src/main/java/com/qima/product/service/ProductService.java) - call ```/products/prioritization``` to verify
 Filter the existing products based on the blacklisted products and companies
 
-##### 4. ProductService#sortProducts - call ```/products/prioritization``` to verify
+##### 4. [ProductService#sortProducts](src/main/java/com/qima/product/service/ProductService.java) - call ```/products/prioritization``` to verify
 This is the final **Big Boss** to sort the products based on the priorities. Be carefull that the priorities are not fixed, it means if the priority data were changed, no code changes should be done in order to get the new sorted products.
