@@ -126,7 +126,7 @@ First the product with ID of 'p4' will be filtered out since it is in the blackl
 To sort the products, toplisted products and general priorities are provide:
 
 - **toplisted products** - array of product IDs<br/>
-    **<sub>These products should always be put to the first positions of the result list.</sub>**
+    ***<sub>These products should always be put to the first positions of the result list.</sub>***
     ```json
     ["p5", "p2"]
     ```
