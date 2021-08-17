@@ -71,22 +71,22 @@ For example, suppose the products and companies are as below:
     {
         "id": "p1",
         "companyId": "c1"
-        ...
+        // other fields
     },
     {
         "id": "p2",
         "companyId": "c2"
-        ...
+        // other fields
     },
     {
         "id": "p3",
         "companyId": "c3"
-        ...
+        // other fields
     },
     {
         "id": "p4",
         "companyId": "c4"
-        ...
+        // other fields
     }
 ]
 ```
@@ -111,8 +111,8 @@ First the product with ID of 'p4' will be filtered out since it is in the blackl
 [
     {
         "id": "p1",
-        "companyId": "c1"
-        ...
+        "companyId": "c1",
+        // other fields
     }
 ]
 ```
@@ -131,7 +131,7 @@ To sort the products, toplisted products and general priorities are provide:
     General data format for priority (sorting criteria)
     ```json
     {
-        "rank": [1..n],
+        "rank": number,
         "type": ["PRICE"|"CLASSIFICATION"|"COMPANY"],
         "source": string,
         "dir": ["ASC"|"DESC"],
@@ -143,7 +143,7 @@ To sort the products, toplisted products and general priorities are provide:
     - **PRICE**
         ```json
         {
-            "rank": [1..n],
+            "rank": number,
             "type": "PRICE",
             "dir": ["ASC"|"DESC"]
         }
@@ -153,7 +153,7 @@ To sort the products, toplisted products and general priorities are provide:
         ***<sup>There are five classifications with order from low to high are: F, C, B, A, S</sup>***
         ```json
         {
-            "rank": [1..n],
+            "rank": number,
             "type": "CLASSIFICATION",
             "dir": ["ASC"|"DESC"]
         }
@@ -163,7 +163,7 @@ To sort the products, toplisted products and general priorities are provide:
         ***<sup>This type means whether a product belongs to the company with ID in the source field or the sub-companies of it</sup>***
         ```json
         {
-            "rank": [1..n],
+            "rank": number,
             "type": "CLASSIFICATION",
             "source": company_id
         }
@@ -213,7 +213,9 @@ Fill parent field in all company entity with the relation data. Result of the co
             "parent": null
         }
     },
-    ...
+    {
+        // another company information
+    }
 ]
 ```
 
