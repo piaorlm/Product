@@ -126,7 +126,7 @@ First the product with ID of 'p4' will be filtered out since it is in the blackl
 To sort the products, toplisted products and general priorities are provide:
 
 - **toplisted products** - array of product IDs<br/>
-    **<sup>These products should always be put to the first positions of the result list.</sup>**
+    **<sub>These products should always be put to the first positions of the result list.</sub>**
     ```json
     ["p5", "p2"]
     ```
@@ -155,7 +155,7 @@ To sort the products, toplisted products and general priorities are provide:
         ```
 
     - **CLASSIFICATION**<br/>
-        ***<sup>There are five classifications with order from low to high are: F, C, B, A, S</sup>***
+        ***<sub>There are five classifications with order from low to high are: F, C, B, A, S</sub>***
         ```json
         {
             "rank": "<rank_number>",
@@ -165,7 +165,7 @@ To sort the products, toplisted products and general priorities are provide:
         ```
         
     - **COMPANY**<br/>
-        ***<sup>This type means whether a product belongs to the company with ID in the source field or the sub-companies of it</sup>***
+        ***<sub>This type means whether a product belongs to the company with ID in the source field or the sub-companies of it</sub>***
         ```json
         {
             "rank": "<rank_number>",
