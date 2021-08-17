@@ -43,7 +43,7 @@ Now our data are built based on these:
 ---
 ## Requirement
 
-The final target is to provide a **filtered** and **sorted** product name list based on the priority criterias.
+The final target is to provide a **filtered** and **sorted** product list based on the priority criterias.
 
 #### 1. Filter
 To filter products, blacklisted products and blaclisted companies are provided:
