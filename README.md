@@ -19,8 +19,8 @@ Now our data are built based on these:
 - **Company Relationship**
 ```json
 {
-    "id": "c1",
-    "subcoordinate": "c2"
+    "parentId": "c1",
+    "subcoordinateId": "c2"
 }
 ```
 ***<sup>This means that company with id of 'c2' is a sub company of that with id of 'c1'</sup>***
@@ -97,8 +97,8 @@ For example, suppose the products and companies are as below:
 - **company relationship**
 ```json
 {
-    "id": "c2",
-    "subcoordinate": "c3"
+    "parentId": "c2",
+    "subcoordinateId": "c3"
 }
 ```
 - **blacklisted products**
