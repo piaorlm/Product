@@ -1,9 +1,6 @@
 package com.qima.product.controller;
 
 import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import com.qima.product.entity.Company;
 import com.qima.product.service.CompanyService;
@@ -22,9 +19,13 @@ public class CompanyController {
     private CompanyService companyService;
 
     @GetMapping
-    public ResponseEntity<List<Company>> getAll(final String ids) {
-        return new ResponseEntity<>(Optional.ofNullable(ids).map(idsStr -> idsStr.split(",")).map(Stream::of)
-                .map(stream -> stream.map(String::trim).collect(Collectors.toSet())).map(companyService::getCompanies)
-                .orElse(companyService.getAll()), HttpStatus.OK);
+    public ResponseEntity<List<Company>> getAll() {
+        return new ResponseEntity<>(companyService.getAll(), HttpStatus.OK);
+    }
+
+    public ResponseEntity<Company> getById() {
+        // TODO: Task 1
+        // final List<Compan> companies = companyService.getCompanies();
+        return new ResponseEntity<>(null, HttpStatus.OK);
     }
 }

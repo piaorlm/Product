@@ -202,8 +202,8 @@ To sort the products, toplisted products and general priorities are provide:
 
 Here are the tasks to acheive these two requirements.
 
-##### 1. [CompanyService#getCompanies](src/main/java/com/qima/product/service/CompanyService.java) - call ```/companies?ids=c1,c2``` to varify
-Implement function to search companies by a set of Ids passed in
+##### 1. [CompanyController#getById](src/main/java/com/qima/product/controller/CompanyController.java)
+Implement a RESTful API to get a company by company ID
 
 ##### 2. [CompanyDao#initCompanies](src/main/java/com/qima/product/dao/CompanyDao.java) - call ```/companies``` to varify
 Fill parent field in all company entity with the relation data. Result of the company list should be in format as below:
