@@ -1,12 +1,12 @@
-package com.qima.interview.controller;
+package com.qima.product.controller;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import com.qima.interview.entity.Company;
-import com.qima.interview.service.CompanyService;
+import com.qima.product.entity.Company;
+import com.qima.product.service.CompanyService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

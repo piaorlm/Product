@@ -1,9 +1,9 @@
-package com.qima.interview.dao;
+package com.qima.product.dao;
 
 import java.util.List;
 import java.util.Set;
 
-import com.qima.interview.entity.Priority;
+import com.qima.product.entity.Priority;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Repository;

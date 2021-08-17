@@ -1,7 +1,7 @@
-package com.qima.interview.entity;
+package com.qima.product.entity;
 
-import com.qima.interview.constant.PriorityType;
-import com.qima.interview.constant.SortDirection;
+import com.qima.product.constant.PriorityType;
+import com.qima.product.constant.SortDirection;
 
 import lombok.Data;
 

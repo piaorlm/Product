@@ -1,11 +1,11 @@
-package com.qima.interview.dao;
+package com.qima.product.dao;
 
 import java.util.List;
 
 import javax.annotation.PostConstruct;
 
-import com.qima.interview.entity.Company;
-import com.qima.interview.entity.Relation;
+import com.qima.product.entity.Company;
+import com.qima.product.entity.Relation;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Repository;

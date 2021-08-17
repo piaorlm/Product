@@ -1,4 +1,4 @@
-package com.qima.interview.constant;
+package com.qima.product.constant;
 
 import lombok.Getter;
 

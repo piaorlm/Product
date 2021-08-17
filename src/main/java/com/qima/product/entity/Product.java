@@ -1,6 +1,6 @@
-package com.qima.interview.entity;
+package com.qima.product.entity;
 
-import com.qima.interview.constant.ProductClassification;
+import com.qima.product.constant.ProductClassification;
 
 import lombok.Data;
 

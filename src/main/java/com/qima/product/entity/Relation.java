@@ -1,4 +1,4 @@
-package com.qima.interview.entity;
+package com.qima.product.entity;
 
 import lombok.Data;
 

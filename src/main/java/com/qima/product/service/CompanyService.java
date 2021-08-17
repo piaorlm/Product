@@ -1,10 +1,10 @@
-package com.qima.interview.service;
+package com.qima.product.service;
 
 import java.util.List;
 import java.util.Set;
 
-import com.qima.interview.dao.CompanyDao;
-import com.qima.interview.entity.Company;
+import com.qima.product.dao.CompanyDao;
+import com.qima.product.entity.Company;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
