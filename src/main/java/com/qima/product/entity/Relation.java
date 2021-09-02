@@ -5,5 +5,5 @@ import lombok.Data;
 @Data
 public class Relation {
     private String parentId;
-    private String subcoordinateId;
+    private String subordinateId;
 }

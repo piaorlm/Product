@@ -1,6 +1,6 @@
 ## Welcome
 
-Welcome to this mockup company-product sceneria, here are the basic rules:
+Welcome to this simulated company-product scenario, here are the basic rules:
 1. In real world, companies are not independent while sometimes one can have its own sub-company(ies).
 2. To survive in the market, each company has to release its own product(s).
 3. Also market has some feedback to classify these products.
@@ -20,7 +20,7 @@ Now our data are built based on these:
 ```json
 {
     "parentId": "c1",
-    "subcoordinateId": "c2"
+    "subordinateId": "c2"
 }
 ```
 ***<sup>This means that company with id of 'c2' is a sub company of that with id of 'c1'</sup>***
@@ -43,10 +43,10 @@ Now our data are built based on these:
 ---
 ## Requirement
 
-The final target is to provide a **filtered** and **sorted** product list based on the priority criterias.
+The final target is to provide a **filtered** and **sorted** product list based on the priority criteria.
 
 #### 1. Filter
-To filter products, blacklisted products and blaclisted companies are provided:
+To filter products, blacklisted products and blacklisted companies are provided:
 - **blacklisted products** - array of product IDs
 ```json
 ["p1", "p4"]
@@ -98,7 +98,7 @@ For example, suppose the products and companies are as below:
 ```json
 {
     "parentId": "c2",
-    "subcoordinateId": "c3"
+    "subordinateId": "c3"
 }
 ```
 - **blacklisted products**
@@ -193,20 +193,20 @@ To sort the products, toplisted products and general priorities are provide:
         }
     ]
     ```
-    These priorities means that the products should be sorted with following criterias:
-    - i. Sort the products based on price in asceniding order firstly since it is ranked as 1;
+    These priorities means that the products should be sorted with following criteria:
+    - i. Sort the products based on price in ascending order firstly since it is ranked as 1;
     - ii. For products with the same price, the ones belongs to company 'C2' or its sub-companies have higher priority;
-    - iii. Then for products having same price and all belongs to company 'c2' (including its sub-companies) or those are not from this company hierarchy, sort them based on classification in descending order (from S to F);
+    - iii. Then for products having same price and all belongs to company 'c2' (including its sub-companies) or those are not from this company hierarchy structure, sort them based on classification in descending order (from S to F);
 
 ## Tasks
 
-Here are the tasks to acheive these two requirements.
+Here are the tasks to achieve these two requirements.
 
 ##### 1. [CompanyController#getById](src/main/java/com/qima/product/controller/CompanyController.java) - call created API (```/companies...```) to verify
-Implement a RESTful API to get a company by company ID
+Implement a RESTful API to get **one** company by a company ID
 
 ##### 2. [CompanyDao#initCompanies](src/main/java/com/qima/product/dao/CompanyDao.java) - call ```/companies``` to verify
-Fill parent field in all company entity with the relation data. Result of the company list should be in format as below:
+Fill *parent* field in all company entity with the relation data. Result of the company list should be in format as below:
 ```json
 [
     {
@@ -227,7 +227,7 @@ Fill parent field in all company entity with the relation data. Result of the co
 ```
 
 ##### 3. [ProductService#getAllPrioritized](src/main/java/com/qima/product/service/ProductService.java) - call ```/products/prioritization``` to verify
-Filter the existing products based on the blacklisted products and companies
+Filter the existing products based on the blacklisted products and the blacklisted companies
 
 ##### 4. [ProductService#sortProducts](src/main/java/com/qima/product/service/ProductService.java) - call ```/products/prioritization``` to verify
-This is the final **Big Boss** to sort the products based on the priorities. Be carefull that the priorities are not fixed, it means if the priority data were changed, no code changes should be done in order to get the new sorted products.
+This is the final **Big Boss** - sort the products based on the priorities. Be carefull that the priorities are not fixed, it means if the priority data were changed, no code changes should be done in order to get the new sorted products.
