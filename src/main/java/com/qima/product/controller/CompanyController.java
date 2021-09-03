@@ -25,7 +25,7 @@ public class CompanyController {
 
     public ResponseEntity<Company> getById() {
         // TODO: Task 1
-        // final List<Compan> companies = companyService.getCompanies();
+        // final List<Company> companies = companyService.getCompanies();
         return new ResponseEntity<>(null, HttpStatus.OK);
     }
 }
