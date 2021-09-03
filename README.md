@@ -23,7 +23,7 @@ Now our data are built based on these:
     "subordinateId": "c2"
 }
 ```
-***<sup>This means that company with id of 'c2' is a sub company of that with id of 'c1'</sup>***
+***<sup>This means that company with id of 'c2' is a sub company of that with id of 'c1'. One company could only have at most one parent without any circle references</sup>***
 
 - **Product**
 ```json
