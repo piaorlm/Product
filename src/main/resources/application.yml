@@ -32,19 +32,19 @@ company:
 
   relations:
   - parentId: c1
-    subcoordinateId: c4
+    subordinateId: c4
 
   - parentId: c1
-    subcoordinateId: c6
+    subordinateId: c6
 
   - parentId: c2
-    subcoordinateId: c8
+    subordinateId: c8
 
   - parentId: c2
-    subcoordinateId: c5
+    subordinateId: c5
 
   - parentId: c7
-    subcoordinateId: c3
+    subordinateId: c3
 
 product:
   products:
