@@ -46,11 +46,32 @@ public class ProductService {
         return sortProducts(filterProducts(getAllWithCompanyInfo()));
     }
 
+    /**
+     * Task 3:
+     * <ol>
+     * <li>Read Product bean defination to know the company entity with parent has
+     * already been there</li>
+     * <li>Logic to check parent company with blacklisted companies</li>
+     * <li>Better to suppose multiple layer of companies</li>
+     * <li>Using stream proficiently</li>
+     * </ol>
+     */
     private List<Product> filterProducts(List<Product> products) {
         final Set<String> blacklistedProductIds = priorityDao.getBlackListedProducts();
         final Set<String> blacklistedCompanyIds = priorityDao.getBlackListedCompanies();
         // TODO: 3
-        return products;
+        return products.stream()
+                .filter(product -> !blacklistedProductIds.contains(product.getId())
+                        && !isCompanyBlacklisted(product.getCompany(), blacklistedCompanyIds))
+                .collect(Collectors.toList());
+    }
+
+    private boolean isCompanyBlacklisted(final Company company, final Set<String> blacklistedCompanyIds) {
+        if (company == null) {
+            return false;
+        }
+        return blacklistedCompanyIds.contains(company.getId())
+                || isCompanyBlacklisted(company.getParent(), blacklistedCompanyIds);
     }
 
     private List<Product> sortProducts(final List<Product> products) {
