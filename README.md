@@ -228,6 +228,7 @@ Fill *parent* field in all company entity with the relation data. Result of the 
 
 ##### 3. [ProductService#getAllPrioritized](src/main/java/com/qima/product/service/ProductService.java) - call ```/products/prioritization``` to verify
 Filter the existing products based on the blacklisted products and the blacklisted companies
+**Note: Could use the *company* field with parent information (done in Task 2 above) in Product entity to finish this task**
 
 ##### 4. [ProductService#sortProducts](src/main/java/com/qima/product/service/ProductService.java) - call ```/products/prioritization``` to verify
 This is the final **Big Boss** - sort the products based on the priorities. Be carefull that the priorities are not fixed, it means if the priority data were changed, no code changes should be done in order to get the new sorted products.
