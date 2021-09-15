@@ -1,11 +1,15 @@
 package com.qima.product.service;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
+import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+import com.qima.product.constant.SortDirection;
 import com.qima.product.dao.PriorityDao;
 import com.qima.product.dao.ProductDao;
 import com.qima.product.entity.Company;
@@ -47,7 +51,8 @@ public class ProductService {
     }
 
     /**
-     * Task 3:
+     * Task 3, please remind candidate to use company with parent information in
+     * Product entity:
      * <ol>
      * <li>Read Product bean defination to know the company entity with parent has
      * already been there</li>
@@ -79,5 +84,13 @@ public class ProductService {
         final List<Priority> priorities = priorityDao.getPriorities();
         // TODO: 4
         return products;
+    }
+
+    private Comparator<Product> getPriceComparator(SortDirection sortDir) {
+        return Comparator.nullsLast(sortDir.convert(Comparator.comparingDouble(Product::getPrice)));
+    }
+
+    private Comparator<Product> getClassificationComparator(SortDirection sortDir) {
+        return Comparator.nullsLast(sortDir.convert(Comparator.comparing(p -> p.getClassification().getRank())));
     }
 }
